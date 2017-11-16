@@ -239,8 +239,5 @@ class NoodlesRunner:
         else:
             result = run_workflow(workflow, self.max_threads)
 
-        for r in result:
-            print(r['time'])
-
         # Filter out None times
         return [r for r in result if r['time']], {}
