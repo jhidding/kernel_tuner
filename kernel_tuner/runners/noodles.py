@@ -20,7 +20,7 @@ from noodles.run.queue import (Queue)
 from noodles.run.thread_pool import (thread_pool)
 from noodles.run.worker import (worker)
 from noodles.run.hybrid import run_hybrid
-from noodles.draw_workflow import draw_workflow
+# from noodles.draw_workflow import draw_workflow
 
 from ..core import DeviceInterface
 from .. import util
@@ -229,9 +229,9 @@ class NoodlesRunner:
         """
         workflow = parameter_sweep(
             parameter_space, kernel_options, self.device_options,
-            tuning_options, self.max_threads * 2)
+            tuning_options, self.max_threads)
 
-        draw_workflow("kernel-tuner-wf.pdf", workflow._workflow)
+        # draw_workflow("kernel-tuner-wf.pdf", workflow._workflow)
 
         if tuning_options.verbose:
             # FIXME : sensible display routine
